@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4786.robot;
 
+import org.usfirst.frc.team4786.robot.subsystems.DriveTrain;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -12,6 +14,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
+
+	//We setup our subsystem objects here	
+	public static DriveTrain driveTrain = new DriveTrain();
+	
+	public static String frontSide;
+	
+	public static OI oi;
+	
+	
+	
 	final String defaultAuto = "Default";
 	final String customAuto = "My Auto";
 	String autoSelected;
