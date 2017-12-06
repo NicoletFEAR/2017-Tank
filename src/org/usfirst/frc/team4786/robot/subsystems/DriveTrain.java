@@ -16,6 +16,8 @@ public class DriveTrain extends Subsystem {
 
 	private CANTalon frontLeft = new CANTalon(RobotMap.frontLeftPort);
 	private CANTalon frontRight = new CANTalon(RobotMap.frontRightPort);
+	private CANTalon backLeft = new CANTalon(RobotMap.backLeftPort);
+	private CANTalon backRight = new CANTalon(RobotMap.backRightPort);
 	
 	//Robot will drive as if the front side is the back when reversed is true
 	private boolean reversed;
@@ -29,8 +31,11 @@ public class DriveTrain extends Subsystem {
 		frontLeft.enable();
 		frontRight.enable();
 		
+		backLeft.changeControlMode(CANTalon.TalonControlMode.Follower);
+		backRight.changeControlMode(CANTalon.TalonControlMode.Follower);
+		backLeft.set(RobotMap.frontLeftPort);
+		backRight.set(RobotMap.frontRightPort);
 		frontLeft.setInverted(true);
-		frontRight.setInverted(false);
 	}
 	
 	@Override
