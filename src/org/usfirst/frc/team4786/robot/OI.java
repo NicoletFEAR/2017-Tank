@@ -1,8 +1,6 @@
 package org.usfirst.frc.team4786.robot;
 
 
-import org.usfirst.frc.team4786.robot.commands.SwitchFrontSide;
-
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
@@ -35,11 +33,7 @@ public class OI {
  
       //Tie our many buttons, sensors, joysticks, and Xbox controllers to robot commands
     		    	
-    
-   	//We map a bunch of buttons to switch the front side for Andy's convenience ;)
-    	rightJoystickTrigger.whenPressed(new SwitchFrontSide());
-    	leftJoystickTrigger.whenPressed(new SwitchFrontSide());
- 
+
     }
   
     public Joystick getLeftDriveJoy() {
@@ -53,10 +47,6 @@ public class OI {
 		return xbox;
 	}
   
-    public void switchJoystickIDs(){
-		int temp = leftDriveJoy.getPort();
-		leftDriveJoy = new Joystick(rightDriveJoy.getPort());
-		rightDriveJoy = new Joystick(temp);
-	}
+ 
 
 }

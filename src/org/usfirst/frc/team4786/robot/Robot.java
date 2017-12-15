@@ -2,9 +2,13 @@ package org.usfirst.frc.team4786.robot;
 
 import org.usfirst.frc.team4786.robot.subsystems.DriveTrain;
 
+import org.usfirst.frc.team4786.robot.commands.OpenLoopDrive;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import edu.wpi.first.wpilibj.command.Command;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,7 +26,7 @@ public class Robot extends IterativeRobot {
 	
 	public static OI oi;
 	
-	
+	Command teleopCommand; 
 	
 	final String defaultAuto = "Default";
 	final String customAuto = "My Auto";
@@ -79,9 +83,40 @@ public class Robot extends IterativeRobot {
 	/**
 	 * This function is called periodically during operator control
 	 */
+	
+	
+	//copied from Steamworkd-2017
+public void teleopInit() {
+
+		teleopCommand = new OpenLoopDrive();
+		
+		//gearPlacementCamera.setExposureAuto();
+		
+		// This makes sure that the autonomous stops running when
+		// teleop starts running. If you want the autonomous to
+		// continue until interrupted by another command, remove
+		// this line or comment it out.
+		//visionThread.yield();
+	//	if (autonomousCommand != null)
+		//	autonomousCommand.cancel();
+		
+		
+		
+		if(teleopCommand != null) {
+			teleopCommand.start();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public void teleopPeriodic() {
-		Scheduler.getInstance().run();
+//		Scheduler.getInstance().run();
 	}
 
 	/**
