@@ -85,7 +85,7 @@ public class Robot extends IterativeRobot {
 	 */
 	
 	
-	//copied from Steamworkd-2017
+	//copied from Steamworks-2017
 public void teleopInit() {
 
 		teleopCommand = new OpenLoopDrive();
@@ -101,18 +101,10 @@ public void teleopInit() {
 		//	autonomousCommand.cancel();
 		
 		
-		
 		if(teleopCommand != null) {
 			teleopCommand.start();
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	@Override
 	public void teleopPeriodic() {

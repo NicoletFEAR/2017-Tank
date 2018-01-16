@@ -18,35 +18,31 @@ public class OI {
 	private Joystick leftDriveJoy;
     private Joystick rightDriveJoy;
     private final XboxController xbox;
-	private static Button leftJoystickTrigger;
-	private static Button rightJoystickTrigger;
+	private static Button leftXboxTrigger;
+	private static Button rightXboxTrigger;
 
     public OI(){
     	//Init the objects for all the buttons, sensors, joysticks, and Xbox controllers
-    	leftDriveJoy = new Joystick(0);
-    	rightDriveJoy = new Joystick(1);
-        xbox = new XboxController(2);
-        leftJoystickTrigger = new JoystickButton(leftDriveJoy, 1);
-    	rightJoystickTrigger = new JoystickButton(rightDriveJoy, 1);
-
-    	  
+    	//leftDriveJoy = new Joystick(0);
+    	//rightDriveJoy = new Joystick(1);
+    	
+        xbox = new XboxController(0);
+        
+        //leftJoystickTrigger = new JoystickButton(leftDriveJoy, 1);
+        //rightJoystickTrigger = new JoystickButton(rightDriveJoy, 1);
+    }  
  
       //Tie our many buttons, sensors, joysticks, and Xbox controllers to robot commands
-    		    	
-
-    }
-  
+/*
     public Joystick getLeftDriveJoy() {
 	    return leftDriveJoy;
 	}
 	public Joystick getRightDriveJoy() {
 	    return rightDriveJoy;
 	}
-	
-  	public XboxController getXbox() {
+*/
+    
+    public XboxController getXbox() {
 		return xbox;
 	}
-  
- 
-
 }
